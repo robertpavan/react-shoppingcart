@@ -27,8 +27,8 @@ export function Body({
   total: number;
 }) {
   return (
-    <main className="max-w-7xl mx-auto py-6">
-      <div className="grid grid-cols-1 lg:grid-cols-7 gap-12">
+    <main className="max-w-7xl mx-auto py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-7 gap-10">
         {/* Parts List */}
         <AvailablePartsList parts={parts} addToCart={addToCart} cart={cart} />
 

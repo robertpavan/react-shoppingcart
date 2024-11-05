@@ -10,9 +10,9 @@ export function AvailablePartsList({
   cart: CartItem[];
 }) {
   return (
-    <div className="lg:col-span-4">
+    <div className="lg:col-span-4 px-4">
       <div className="available-parts">
-        <div className="p-6">
+        <div className="px-2">
           <h2 className="parts-title mb-4">Available Parts</h2>
           <div className="space-y-6">
             {parts.map((part) => {

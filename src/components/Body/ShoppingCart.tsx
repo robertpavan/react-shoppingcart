@@ -29,9 +29,9 @@ export function ShoppingCart({
   }
 
   return (
-    <div className="lg:col-span-3">
+    <div className="lg:col-span-3 px-4">
       <div className="shopping-cart">
-        <div className="p-6">
+        <div className="px-2">
           <h2 className="cart-title mb-4">Shopping Cart</h2>
           {cart.length === 0 ? (
             <p className="text-gray-500 text-center py-6">Your cart is empty</p>
