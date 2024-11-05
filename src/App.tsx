@@ -12,7 +12,7 @@ const PARTS_FOR_SALE: Part[] = [
     description: "16-core, 32-thread processor",
     icon: <Cpu className="w-8 h-8" />,
     specs: "4.9 GHz Max Boost, 72MB Cache",
-    stock: 20,
+    stock: 10,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const PARTS_FOR_SALE: Part[] = [
     description: "High-end graphics card",
     icon: <CircuitBoard className="w-8 h-8" />,
     specs: "16GB GDDR6X, DLSS 3.0",
-    stock: 10,
+    stock: 5,
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const PARTS_FOR_SALE: Part[] = [
     description: "NVMe M.2 SSD",
     icon: <HardDrive className="w-8 h-8" />,
     specs: "7,450 MB/s Read, PCIe 4.0",
-    stock: 300,
+    stock: 50,
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const PARTS_FOR_SALE: Part[] = [
     description: "4K Gaming Monitor",
     icon: <Monitor className="w-8 h-8" />,
     specs: '27" 4K UHD, 144Hz, 1ms',
-    stock: 60,
+    stock: 20,
   },
 ];
 
@@ -84,6 +84,10 @@ function App() {
     setCart((currentCart) => {
       return currentCart.map((item) => {
         if (item.part.id === partId) {
+          const partInStock = parts.find((part) => part.id === partId);
+          if (partInStock && item.quantity + delta > partInStock.stock) {
+            return item; // Do nothing if adding would exceed stock
+          }
           const newQuantity = Math.max(1, item.quantity + delta);
           return { ...item, quantity: newQuantity };
         }
