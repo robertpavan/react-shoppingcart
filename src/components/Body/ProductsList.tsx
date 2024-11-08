@@ -1,6 +1,6 @@
 import { CartItem, Part } from "../../types";
 
-export function AvailablePartsList({
+export function ProductsList({
   parts,
   addToCart,
   cart,

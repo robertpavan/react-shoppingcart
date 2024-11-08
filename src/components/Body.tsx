@@ -1,7 +1,7 @@
 import { Part, CartItem } from "../types";
 import "./body.css";
-import { AvailablePartsList } from "./Body/PartsList";
-import { ShoppingCart } from "./Body/ShoppingCart";
+import { ProductsList } from "./Body/ProductsList";
+import { ShoppingCart } from "./Body/Cart";
 
 export function Body({
   parts,
@@ -30,7 +30,7 @@ export function Body({
     <main className="max-w-7xl mx-auto py-10">
       <div className="grid grid-cols-1 lg:grid-cols-7 gap-10">
         {/* Parts List */}
-        <AvailablePartsList parts={parts} addToCart={addToCart} cart={cart} />
+        <ProductsList parts={parts} addToCart={addToCart} cart={cart} />
 
         {/* Shopping Cart */}
         <ShoppingCart
